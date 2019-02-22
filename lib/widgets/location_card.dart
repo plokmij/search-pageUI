@@ -4,24 +4,22 @@ class LocationCard extends StatelessWidget {
   final String location;
   final Color color;
 
-  LocationCard({this.location,this.color});
+  LocationCard({this.location, this.color});
 
   Widget build(BuildContext context) {
-    return card(); 
+    return card();
   }
 
-  Widget card(){
+  Widget card() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 5.0),
       child: Stack(
-        children: <Widget>[
-          colorBox(),
-        ],
+        children: <Widget>[colorBox()],
       ),
     );
   }
 
-  Widget colorBox(){
+  Widget colorBox() {
     return Container(
       height: 80.0,
       width: 120.0,
@@ -37,6 +35,23 @@ class LocationCard extends StatelessWidget {
           ),
         ],
       ),
+      child: Center(
+        child:locationName()),
     );
+  }
+
+  final textStyle = TextStyle(
+    fontSize: 18.0,
+    fontWeight: FontWeight.w700,
+    color: Colors.white,
+  );
+
+  Widget locationName() {
+    Text locationName = Text(
+      location,
+      style: textStyle,
+    );
+
+    return locationName;
   }
 }

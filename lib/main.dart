@@ -11,6 +11,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoApp(
       home: CupertinoPageScaffold(
+        resizeToAvoidBottomInset: false,
         navigationBar: CupertinoNavigationBar(
           leading: Icon(
             Icons.arrow_back,
@@ -48,7 +49,8 @@ class App extends StatelessWidget {
         ),
       ),*/
       alignment: Alignment.topCenter,
-      height: 498.0,
+      //constraints: BoxConstraints.expand(),
+      //height: 472.0,
       child: ListView(
         padding: EdgeInsets.only(top: 15.0),
         shrinkWrap: true,
@@ -126,7 +128,7 @@ class App extends StatelessWidget {
         ),
         height: 100.0,
         margin: EdgeInsets.only(top: 67.5),
-        padding: EdgeInsets.only(top: 5.0, bottom: 5.0, right: 5.0),
+        padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
         child: ListView(
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
@@ -137,17 +139,19 @@ class App extends StatelessWidget {
                   width: 10.0,
                 ),
                 LocationCard(
-                  location: "Wandoor",
+                  location: "Location 1",
                   color: Colors.grey,
                 ),
                 LocationCard(
-                  location: "NowaY",
+                  location: "Location 2",
                   color: Colors.grey,
                 ),
                 LocationCard(
+                  location: "Location 3",
                   color: Colors.grey,
                 ),
                 LocationCard(
+                  location: "Location 4",
                   color: Colors.grey,
                 )
               ],
