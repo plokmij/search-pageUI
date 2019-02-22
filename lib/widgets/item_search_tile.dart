@@ -1,38 +1,38 @@
 import 'package:flutter/material.dart';
 
-class LocationCard extends StatelessWidget {
-  final String location;
+class ItemSearchTile extends StatelessWidget {
+  final String name;
   final Color color;
-
-  LocationCard({this.location,this.color});
+  
+  ItemSearchTile({this.name, this.color});
 
   Widget build(BuildContext context) {
-    return card(); 
+    return tile();
   }
 
-  Widget card(){
+  Widget tile(){
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 5.0),
       child: Stack(
         children: <Widget>[
-          colorBox(),
+          colorBox(color),
         ],
       ),
     );
   }
 
-  Widget colorBox(){
+  Widget colorBox(Color color) {
     return Container(
-      height: 80.0,
-      width: 120.0,
+      height: 100.0,
+      width: 140.0,
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(8.0),
         shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(8.0),
         boxShadow: <BoxShadow>[
           BoxShadow(
-            color: color,
-            blurRadius: 1.0,
+            color: Colors.black38,
+            blurRadius: 2.0,
             offset: (Offset(0.0, 2.0)),
           ),
         ],

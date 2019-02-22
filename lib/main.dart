@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'widgets/location_card.dart';
+import 'widgets/item_search_tile.dart';
 
 void main() {
   runApp(App());
@@ -33,10 +34,26 @@ class App extends StatelessWidget {
           children: <Widget>[
             buildList(),
             SizedBox(
-              height: 5.0,
+              height: 10.0,
             ),
-            Text(
-                'I m going kdfkl dfjkh sdkfjhskjdf hksjjdfh ksdhfklsdjhf ksdjjhf alksjdfhlkjsadhf klsjdjhfksdjhf klsadjjfh ksdjfhksdjfhksajdhfks dfklsadfhlksajdhf lksjdhf lksdjhf lksdjhfkzxcmzxbnclkash d lkasjdhfks zfkjasdhf kljsghdfk;asjhd fkljsd kfjhs adlfkjas dfkjh sakdjfh skdfhskdf klsajdfh skjdfhksdhfks vmzxcbnsdhgf kjasdf kasdhf crazy'),
+            Text('Centres in Location 1',
+            style: TextStyle(
+              fontSize: 21.0,
+              fontWeight: FontWeight.w700,
+            ),),
+            buildSearchTile(),
+            Text('Centres in Location 2',
+            style: TextStyle(
+              fontSize: 21.0,
+              fontWeight: FontWeight.w700,
+            ),),
+            buildSearchTile(),
+            Text('Centres in Location 3',
+            style: TextStyle(
+              fontSize: 21.0,
+              fontWeight: FontWeight.w700,
+            ),),
+            buildSearchTile(),
           ],
         ),
       ),
@@ -54,13 +71,51 @@ class App extends StatelessWidget {
           children: <Widget>[
             Row(
               children: <Widget>[
-                LocationCard(),
-                LocationCard(),
-                LocationCard(),
-                LocationCard()
+                LocationCard(
+                  location: "Wandoor",
+                  color: Colors.grey,
+                ),
+                LocationCard(
+                  location: "NowaY",
+                  color: Colors.grey,
+                ),
+                LocationCard(
+                  color: Colors.grey,
+                ),
+                LocationCard(
+                  color: Colors.grey,
+                )
               ],
             )
           ],
         ));
+  }
+
+  Widget buildSearchTile() {
+    return Container(
+      height: 120.0,
+      padding: EdgeInsets.all(7.0),
+      child: ListView(
+        shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              ItemSearchTile(color: Colors.grey),
+              ItemSearchTile(color: Colors.grey),
+              ItemSearchTile(color: Colors.grey),
+              ItemSearchTile(color: Colors.grey),
+              ItemSearchTile(color: Colors.grey),
+              ItemSearchTile(color: Colors.grey),              ItemSearchTile(color: Colors.grey),
+              ItemSearchTile(color: Colors.grey),
+              ItemSearchTile(color: Colors.grey),
+              ItemSearchTile(color: Colors.grey),
+              ItemSearchTile(color: Colors.grey),
+              ItemSearchTile(color: Colors.grey),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
