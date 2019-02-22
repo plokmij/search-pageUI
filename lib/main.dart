@@ -33,35 +33,71 @@ class App extends StatelessWidget {
         child: Column(
           children: <Widget>[
             buildList(),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text('Centres in Location 1',
-            style: TextStyle(
-              fontSize: 21.0,
-              fontWeight: FontWeight.w700,
-            ),),
-            buildSearchTile(),
-            Text('Centres in Location 2',
-            style: TextStyle(
-              fontSize: 21.0,
-              fontWeight: FontWeight.w700,
-            ),),
-            buildSearchTile(),
-            Text('Centres in Location 3',
-            style: TextStyle(
-              fontSize: 21.0,
-              fontWeight: FontWeight.w700,
-            ),),
-            buildSearchTile(),
+            buildBody(),
           ],
         ),
       ),
     );
   }
 
+  Widget buildBody() {
+    return Container(
+      height: 498.0,
+      child: ListView(
+        scrollDirection: Axis.vertical,
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              Text(
+                'Centres in Location 1',
+                style: TextStyle(
+                  fontSize: 21.0,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              buildSearchTile(),
+              Text(
+                'Centres in Location 2',
+                style: TextStyle(
+                  fontSize: 21.0,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              buildSearchTile(),
+              Text(
+                'Centres in Location 3',
+                style: TextStyle(
+                  fontSize: 21.0,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              buildSearchTile(),Text(
+                'Centres in Location 3',
+                style: TextStyle(
+                  fontSize: 21.0,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              buildSearchTile(),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget buildList() {
     return Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: Colors.black38,
+            blurRadius: 1.0,
+            offset: (Offset(0.0, 2.0)),
+          ),
+        ],
+        ),
         height: 100.0,
         margin: EdgeInsets.only(top: 75.0),
         padding: EdgeInsets.all(5.0),
@@ -94,7 +130,7 @@ class App extends StatelessWidget {
   Widget buildSearchTile() {
     return Container(
       height: 120.0,
-      padding: EdgeInsets.all(7.0),
+      padding: EdgeInsets.all(5.0),
       child: ListView(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
@@ -106,7 +142,8 @@ class App extends StatelessWidget {
               ItemSearchTile(color: Colors.grey),
               ItemSearchTile(color: Colors.grey),
               ItemSearchTile(color: Colors.grey),
-              ItemSearchTile(color: Colors.grey),              ItemSearchTile(color: Colors.grey),
+              ItemSearchTile(color: Colors.grey),
+              ItemSearchTile(color: Colors.grey),
               ItemSearchTile(color: Colors.grey),
               ItemSearchTile(color: Colors.grey),
               ItemSearchTile(color: Colors.grey),
