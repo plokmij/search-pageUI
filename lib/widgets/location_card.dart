@@ -42,7 +42,7 @@ class LocationCard extends StatelessWidget {
 
   final textStyle = TextStyle(
     fontSize: 18.0,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w400,
     color: Colors.white,
   );
 

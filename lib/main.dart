@@ -50,62 +50,17 @@ class App extends StatelessWidget {
       ),*/
       alignment: Alignment.topCenter,
       //constraints: BoxConstraints.expand(),
-      //height: 472.0,
+      height: 500.0,
       child: ListView(
-        padding: EdgeInsets.only(top: 15.0),
+        padding: EdgeInsets.only(top: 17.5),
         shrinkWrap: true,
         scrollDirection: Axis.vertical,
         children: <Widget>[
           Column(
             children: <Widget>[
-              Container(
-                padding: EdgeInsets.only(left: 10.0),
-                child: Text(
-                  'Centres in Location 1',
-                  style: TextStyle(
-                    fontSize: 21.0,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                alignment: Alignment.topLeft,
-              ),
               buildSearchTile(),
-              Container(
-                padding: EdgeInsets.only(left: 10.0,top:10.0),
-                child: Text(
-                  'Centres in Location 2',
-                  style: TextStyle(
-                    fontSize: 21.0,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                alignment: Alignment.topLeft,
-              ),
               buildSearchTile(),
-              Container(
-                padding: EdgeInsets.only(left: 10.0,top:10.0),
-                child: Text(
-                  'Centres in Location 2',
-                  style: TextStyle(
-                    fontSize: 21.0,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                alignment: Alignment.topLeft,
-              ),
               buildSearchTile(),
-              Container(
-                padding: EdgeInsets.only(left: 10.0,top:10.0),
-                child: Text(
-                  'Centres in Location 3',
-                  //textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 21.0,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                alignment: Alignment.topLeft,
-              ),
               buildSearchTile(),
             ],
           ),
@@ -161,33 +116,54 @@ class App extends StatelessWidget {
   }
 
   Widget buildSearchTile() {
-    return Container(
-      alignment: Alignment.topCenter,
-      height: 120.0,
-      margin: EdgeInsets.only(left: 5.0),
-      padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
-      child: ListView(
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        children: <Widget>[
-          Row(
+    return Column(
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.only(left: 10.0),
+          child: Text(
+            'Centres in Location 1',
+            style: TextStyle(
+              fontSize: 15.0,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          alignment: Alignment.topLeft,
+        ),
+        Container(
+          alignment: Alignment.topCenter,
+          height: 120.0,
+          //margin: EdgeInsets.only(left: 10.0),
+          padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+          child: ListView(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
             children: <Widget>[
-              ItemSearchTile(color: Colors.grey),
-              ItemSearchTile(color: Colors.grey),
-              ItemSearchTile(color: Colors.grey),
-              ItemSearchTile(color: Colors.grey),
-              ItemSearchTile(color: Colors.grey),
-              ItemSearchTile(color: Colors.grey),
-              ItemSearchTile(color: Colors.grey),
-              ItemSearchTile(color: Colors.grey),
-              ItemSearchTile(color: Colors.grey),
-              ItemSearchTile(color: Colors.grey),
-              ItemSearchTile(color: Colors.grey),
-              ItemSearchTile(color: Colors.grey),
+              Row(
+                children: <Widget>[
+                  SizedBox(
+                    width: 5.0,
+                  ),
+                  ItemSearchTile(color: Colors.grey),
+                  ItemSearchTile(color: Colors.grey),
+                  ItemSearchTile(color: Colors.grey),
+                  ItemSearchTile(color: Colors.grey),
+                  ItemSearchTile(color: Colors.grey),
+                  ItemSearchTile(color: Colors.grey),
+                  ItemSearchTile(color: Colors.grey),
+                  ItemSearchTile(color: Colors.grey),
+                  ItemSearchTile(color: Colors.grey),
+                  ItemSearchTile(color: Colors.grey),
+                  ItemSearchTile(color: Colors.grey),
+                  ItemSearchTile(color: Colors.grey),
+                ],
+              ),
             ],
           ),
-        ],
-      ),
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+      ],
     );
   }
 }
