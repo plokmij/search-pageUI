@@ -6,9 +6,10 @@ import 'widgets/item_search_tile.dart';
 void main() {
   runApp(App());
 }
-
+//Al test
 class App extends StatelessWidget {
   Widget build(BuildContext context) {
+    //print(MediaQuery.of(context).size);
     return CupertinoApp(
       home: CupertinoPageScaffold(
         resizeToAvoidBottomInset: false,
@@ -34,23 +35,20 @@ class App extends StatelessWidget {
         child: Column(
           children: <Widget>[
             buildList(),
-            buildBody(),
+            buildBody(context),
           ],
         ),
       ),
     );
   }
 
-  Widget buildBody() {
+  Widget buildBody(BuildContext context) {
     return Container(
       /*decoration: BoxDecoration(
-        border: Border(
-          top: BorderSide(color: Colors.red, width: 10.0)
-        ),
+        border: Border(top: BorderSide(color: Colors.red, width: 10.0)),
       ),*/
-      alignment: Alignment.topCenter,
-      //constraints: BoxConstraints.expand(),
-      height: 500.0,
+      //alignment: Alignment.topCenter,
+      height: 462.0,
       child: ListView(
         padding: EdgeInsets.only(top: 17.5),
         shrinkWrap: true,
